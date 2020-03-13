@@ -8,32 +8,34 @@ namespace Data
 {
     public class MakeAMilkshake : IceCream
     {
+        /// <summary>
+        /// Flavor for a given Milkshake.
+        /// </summary>
         private Flavor flavor;
+
+        /// <summary>
+        /// Any possible Toppings a Milkshake could have.
+        /// </summary>
+        private Toppings toppings; 
+        public Toppings Toppings
+        {
+            get { return toppings; }
+            set { toppings = value; }
+        }
+
         public override Flavor Flavor
         {
             get
             {
-                return Flavor.Mint;
+                return Flavor.Vanilla;
             }
             set
             {
                 flavor = value;
             }
         }
-        public override double Price
-        {
-            get
-            {
-                return 4.99;
-            }
-        }
+        public override double Price => 4.99;
 
-        public override List<string> SpecialInstructions
-        {
-            get
-            {
-
-            }
-        }
+        public override List<string> SpecialInstructions => throw new NotImplementedException();
     }
 }
