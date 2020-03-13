@@ -8,6 +8,18 @@ namespace Data
 {
     public class HotFudgeSundae : IceCream
     {
+        private Flavor flavor;
+        public override Flavor Flavor
+        {
+            get
+            {
+                return Flavor.Vanilla;
+            }
+            set
+            {
+                flavor = value;
+            }
+        }
         /// <summary>
         /// Price for a Hot Fudge Sundae.
         /// </summary>
@@ -79,7 +91,7 @@ namespace Data
         /// <summary>
         /// Toppings for a hot fudge sundae.
         /// </summary>
-        public override List<string> Toppings
+        public override List<string> SpecialInstructions
         {
             get
             {
