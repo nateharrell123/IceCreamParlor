@@ -23,11 +23,7 @@ namespace Data
         /// <summary>
         /// Price for a Hot Fudge Sundae.
         /// </summary>
-        private double price = 3.20;
-        void AddToppingsPrice()
-        {
-            if (Toppings.Contains("W/ nuts")) price += .30;
-        }
+        private double price;
         public override double Price
         {
             get
@@ -35,8 +31,7 @@ namespace Data
                 switch (Size)
                 {
                     case Size.Small:
-                        AddToppingsPrice();
-                        break;
+                        return 3.20;
                     case Size.Medium:
                         return 4.40;
                     case Size.Large:
