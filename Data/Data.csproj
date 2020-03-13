@@ -48,7 +48,6 @@
     <Compile Include="MintOreoMilkshake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Size.cs" />
-    <Compile Include="Toppings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

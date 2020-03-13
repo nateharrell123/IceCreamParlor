@@ -11,9 +11,10 @@ namespace Data
     /// </summary>
     public abstract class IceCream
     {
-        public abstract double Price { get; }
+        public abstract double Price { get; set; }
         public abstract List<string> SpecialInstructions { get; }
+        public abstract List<string> Toppings { get; }
         public virtual Size Size { get; set; }
-        public abstract Flavor Flavor { get; set; }
+        public abstract Flavor Flavor { get; set; }   
     }
 }

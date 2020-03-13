@@ -13,15 +13,7 @@ namespace Data
         /// </summary>
         private Flavor flavor;
 
-        /// <summary>
-        /// Any possible Toppings a Milkshake could have.
-        /// </summary>
-        private Toppings toppings; 
-        public Toppings Toppings
-        {
-            get { return toppings; }
-            set { toppings = value; }
-        }
+
 
         public override Flavor Flavor
         {
@@ -34,8 +26,21 @@ namespace Data
                 flavor = value;
             }
         }
-        public override double Price => 4.99;
+        private double price;
+        public override double Price
+        {
+            get
+            {
+                return 5.20;
+            }
+            set
+            {
+                price = value;
+            }
+        }
 
         public override List<string> SpecialInstructions => throw new NotImplementedException();
+
+        public override List<string> Toppings => throw new NotImplementedException();
     }
 }

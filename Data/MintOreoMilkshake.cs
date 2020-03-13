@@ -23,6 +23,7 @@ namespace Data
         /// <summary>
         /// Price for Mint Oreo Milkshake (based on size).
         /// </summary>
+        private double price;
         public override double Price
         {
             get
@@ -38,6 +39,10 @@ namespace Data
                     default:
                         throw new NotImplementedException("Unknown size.");
                 }
+            }
+            set
+            {
+                price = value;
             }
         }
 
@@ -74,5 +79,6 @@ namespace Data
                 return instructions;
             }
         }
+        public override List<string> Toppings => throw new NotImplementedException();
     }
 }

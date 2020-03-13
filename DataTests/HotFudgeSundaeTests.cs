@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DataTests
 {
     [TestClass]
-    public class SundaeTests
+    public class HotFudgeSundaeTests
     {
         /// <summary>
         /// Price for Small sundae.
@@ -60,7 +60,7 @@ namespace DataTests
             var sundae = new HotFudgeSundae();
             sundae.Nuts = false;
 
-            CollectionAssert.Contains(sundae.Toppings, "NO nuts.");
+            CollectionAssert.Contains(sundae.SpecialInstructions, "NO nuts.");
         }
 
         /// <summary>
@@ -72,7 +72,19 @@ namespace DataTests
             var sundae = new HotFudgeSundae();
             sundae.Cherry = false;
 
-            CollectionAssert.Contains(sundae.Toppings, "NO cherry.");
+            CollectionAssert.Contains(sundae.SpecialInstructions, "NO cherry.");
+        }
+        /// <summary>
+        /// Checks the price after a topping has been added.
+        /// </summary>
+        [TestMethod]
+        public void AddingToppingsChangesPrice()
+        {
+            var sundae = new HotFudgeSundae();
+            sundae.Toppings.Add("W/ nuts");
+
+            CollectionAssert.Contains(sundae.Toppings, "W/ nuts");
+            Assert.AreEqual(3.50, sundae.Price);
         }
     }
 }

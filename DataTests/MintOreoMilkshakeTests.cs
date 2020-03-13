@@ -11,17 +11,10 @@ namespace DataTests
     /// </summary>
     [TestClass]
     public class MintOreoMilkshakeTests
-    {
-        public MintOreoMilkshakeTests()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
-        s\\
+    {        
         private TestContext testContextInstance;
 
-        /// <summary>sd
+        /// <summary>
         ///Gets or sets the test context which provides
         ///information about and functionality for the current test run.
         ///</summary>
@@ -79,7 +72,7 @@ namespace DataTests
         {
             var milkshake = new MintOreoMilkshake();
             milkshake.Mint = false;
-            CollectionAssert.Contains(milkshake.Toppings, "NO Mint.");
+            CollectionAssert.Contains(milkshake.SpecialInstructions, "NO Mint.");
         }
     }
 }

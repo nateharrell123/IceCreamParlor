@@ -23,6 +23,11 @@ namespace Data
         /// <summary>
         /// Price for a Hot Fudge Sundae.
         /// </summary>
+        private double price = 3.20;
+        void AddToppingsPrice()
+        {
+            if (Toppings.Contains("W/ nuts")) price += .30;
+        }
         public override double Price
         {
             get
@@ -30,7 +35,8 @@ namespace Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 3.20;
+                        AddToppingsPrice();
+                        break;
                     case Size.Medium:
                         return 4.40;
                     case Size.Large:
@@ -38,6 +44,10 @@ namespace Data
                     default:
                         throw new NotImplementedException("Unknown size.");
                 }
+            }
+            set
+            {
+                price = value;
             }
         }
 
@@ -95,12 +105,27 @@ namespace Data
         {
             get
             {
+                var specialinstructions = new List<string>();
+
+                if (!nuts) specialinstructions.Add("NO nuts.");
+                if (!hotFudge) specialinstructions.Add("NO hot fudge.");
+                if (!cherry) specialinstructions.Add("NO cherry.");
+
+                return specialinstructions;
+            }
+        }
+
+        public override List<string> Toppings
+        {
+            get
+            {
                 var toppings = new List<string>();
 
-                if (!nuts) toppings.Add("NO nuts.");
-                if (!hotFudge) toppings.Add("NO hot fudge.");
-                if (!cherry) toppings.Add("NO cherry.");
-
+                if (nuts)
+                {
+                    toppings.Add("W/ nuts");
+                    price += this.Price + .30;
+                }
                 return toppings;
             }
         }
