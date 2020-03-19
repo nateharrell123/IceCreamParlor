@@ -79,6 +79,5 @@ namespace Data
                 return instructions;
             }
         }
-        public override List<string> Toppings => throw new NotImplementedException();
     }
 }

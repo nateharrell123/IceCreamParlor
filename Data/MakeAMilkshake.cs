@@ -13,8 +13,6 @@ namespace Data
         /// </summary>
         private Flavor flavor;
 
-
-
         public override Flavor Flavor
         {
             get
@@ -40,7 +38,5 @@ namespace Data
         }
 
         public override List<string> SpecialInstructions => throw new NotImplementedException();
-
-        public override List<string> Toppings => throw new NotImplementedException();
     }
 }

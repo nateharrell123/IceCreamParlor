@@ -100,28 +100,15 @@ namespace Data
         {
             get
             {
+                var toppingsPrice = new ToppingsPrice();
                 var specialinstructions = new List<string>();
 
-                if (!nuts) specialinstructions.Add("NO nuts.");
+                if (!nuts) specialinstructions.Add("NO Nuts.");
+                else if (nuts) this.Price += toppingsPrice.Nuts;
                 if (!hotFudge) specialinstructions.Add("NO hot fudge.");
                 if (!cherry) specialinstructions.Add("NO cherry.");
 
                 return specialinstructions;
-            }
-        }
-
-        public override List<string> Toppings
-        {
-            get
-            {
-                var toppings = new List<string>();
-
-                if (nuts)
-                {
-                    toppings.Add("W/ nuts");
-                    price += this.Price + .30;
-                }
-                return toppings;
             }
         }
     }

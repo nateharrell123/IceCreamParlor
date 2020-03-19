@@ -60,7 +60,7 @@ namespace DataTests
             var sundae = new HotFudgeSundae();
             sundae.Nuts = false;
 
-            CollectionAssert.Contains(sundae.SpecialInstructions, "NO nuts.");
+            CollectionAssert.Contains(sundae.SpecialInstructions, "NO Nuts.");
         }
 
         /// <summary>
@@ -81,9 +81,7 @@ namespace DataTests
         public void AddingToppingsChangesPrice()
         {
             var sundae = new HotFudgeSundae();
-            sundae.Toppings.Add("W/ nuts");
-
-            CollectionAssert.Contains(sundae.Toppings, "W/ nuts");
+            sundae.Nuts = true;
             Assert.AreEqual(3.50, sundae.Price);
         }
     }
