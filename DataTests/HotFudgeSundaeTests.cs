@@ -74,15 +74,5 @@ namespace DataTests
 
             CollectionAssert.Contains(sundae.SpecialInstructions, "NO cherry.");
         }
-        /// <summary>
-        /// Checks the price after a topping has been added.
-        /// </summary>
-        [TestMethod]
-        public void AddingToppingsChangesPrice()
-        {
-            var sundae = new HotFudgeSundae();
-            sundae.Nuts = true;
-            Assert.AreEqual(3.50, sundae.Price);
-        }
     }
 }

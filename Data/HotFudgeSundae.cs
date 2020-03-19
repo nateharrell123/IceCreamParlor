@@ -100,11 +100,8 @@ namespace Data
         {
             get
             {
-                var toppingsPrice = new ToppingsPrice();
                 var specialinstructions = new List<string>();
-
                 if (!nuts) specialinstructions.Add("NO Nuts.");
-                else if (nuts) this.Price += toppingsPrice.Nuts;
                 if (!hotFudge) specialinstructions.Add("NO hot fudge.");
                 if (!cherry) specialinstructions.Add("NO cherry.");
 
